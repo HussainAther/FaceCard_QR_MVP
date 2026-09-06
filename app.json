@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "FaceCard QR",
+    "slug": "facecard-qr",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "facecardqr",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hussainather.facecardqr",
+      "infoPlist": {"NSContactsUsageDescription": "FaceCard QR needs contact access only when you choose to save a scanned card."}
+    },
+    "android": {
+      "package": "com.hussainather.facecardqr",
+      "adaptiveIcon": {
+        "backgroundColor": "#F4F2EC",
+        "foregroundImage": "./assets/android-icon-foreground.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": ["CAMERA", "READ_CONTACTS", "WRITE_CONTACTS", "com.android.vending.BILLING"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      ["expo-camera", {"cameraPermission": "FaceCard QR uses the camera only to scan QR cards you choose to scan.", "recordAudioAndroid": false, "barcodeScannerEnabled": true}],
+      ["expo-image-picker", {"photosPermission": "FaceCard QR uses only the photos you explicitly select for local self-enrollment.", "cameraPermission": "FaceCard QR uses the camera only when you choose to take an enrollment selfie."}],
+      ["expo-secure-store", {"configureAndroidBackup": false}],
+      ["expo-media-library", {"photosPermission": "FaceCard QR saves a card image only when you tap Save image.", "savePhotosPermission": "FaceCard QR saves a card image only when you tap Save image.", "isAccessMediaLocationEnabled": false}],
+      "expo-sharing",
+      "expo-contacts"
+    ]
+  }
+}
